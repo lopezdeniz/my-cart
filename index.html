@@ -6,28 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная</title>
     <link rel="stylesheet" href="style.css">
-   
 </head>
 
 <body>
-
     <br>
     <br>
     <br>
 
     <div class="product" data-id="1" data-name="Название товара" data-price="100">
         <h3>Название товара</h3>
-        <p>Цена: $100</p>
-        <button class="add-to-cart-btn">Добавить в корзину</button>
+        <p>Цена: $10</p>
+        <button onclick="addToCart('Товар 1', 10)">Добавить товар 1 в корзину</button>
+    </div>
+
+<br>
+    <div class="product" data-id="1" data-name="Название товара" data-price="100">
+        <h3>Название товара</h3>
+        <p>Цена: $20</p>
+<button onclick="addToCart('Товар 2', 20)">Добавить товар 2 в корзину</button>
     </div>
 
 
+<br>
+    <div class="product" data-id="1" data-name="Название товара" data-price="100">
+        <h3>Название товара</h3>
+        <p>Цена: $90</p>
+    <button onclick="addToCart('Товар 3', 90)">Добавить товар 3 в корзину</button>
 
-<a href="cart.html">Открыть корзину</a>
+    </div>
 
 
+<!-- Кнопка для добавления товара в корзину -->
+
+
+
+    <a href="cart.html">Открыть корзину</a>
 
     <script src="index.js"></script>
+    
 </body>
 
 </html>

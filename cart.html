@@ -12,22 +12,27 @@
 <body>
 
 
-<!-- Кнопка для добавления товара в корзину -->
-<button onclick="addToCart('Товар 1', 10)">Добавить товар 1 в корзину</button>
-<button onclick="addToCart('Товар 2', 20)">Добавить товар 2 в корзину</button>
-<button onclick="addToCart('Товар 3', 90)">Добавить товар 3 в корзину</button>
 
-<!-- Корзина -->
-<div class="cart" id="cart">
-    <h2>Корзина</h2>
-    <div id="cart-items"></div>
-    <div id="total-price"></div>
-    <button onclick="checkout()">Оформить заказ</button>
-</div>
+
+    <!-- Корзина -->
+    <div class="cart" id="cart">
+        <h2>Корзина</h2>
+        <div id="cart-items"></div>
+        <div id="total-price"></div>
+    
+        <!-- Поля для ввода данных -->
+        <input type="text" id="name" placeholder="Ваше имя">
+        <input type="tel" id="phone" placeholder="Номер телефона">
+        <input type="text" id="address" placeholder="Адрес доставки">
+    
+        <!-- Кнопка для оформления заказа -->
+        <button onclick="checkout()">Оформить заказ</button>
+    </div>
 
 
 
 <script src="index.js"></script>
+
 
 
 </body>
