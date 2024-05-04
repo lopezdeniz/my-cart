@@ -65,7 +65,13 @@ const checkout = () => {
     localStorage.removeItem('cartItems');
     renderCart();
     alert('Заказ оформлен!');
+
+    // Очищаем поля ввода
+    document.getElementById('name').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('address').value = '';
 }
+
 
 // Функция для отправки заказа в телеграм
 const sendOrderToTelegram = () => {
