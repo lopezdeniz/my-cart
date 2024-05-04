@@ -49,6 +49,10 @@ window.onload = () => {
     renderCart();
 };
 
+
+
+
+
 // Функция для добавления товара в корзину
 const addToCart = (name, price) => {
     const existingItem = cartItems.find(item => item.name === name);
@@ -63,7 +67,18 @@ const addToCart = (name, price) => {
 
     // Вызываем функцию для обновления счетчика на иконке корзины
     updateCartIconCount();
+
+    // Запускаем анимацию
+    const product = document.querySelector(`.product[data-name="${name}"]`);
+    product.classList.add('added-to-cart');
+    setTimeout(() => {
+        product.classList.remove('added-to-cart');
+    }, 1500); // Устанавливаем таймер для удаления класса анимации через 1.5 секунды
 };
+
+
+
+
 
 // Функция для удаления товара из корзины
 const removeFromCart = (index) => {
@@ -94,8 +109,6 @@ const increaseQuantity = (index) => {
     updateCartIconCount();
 };
 
-
-
 // Функция для оформления заказа
 const checkout = () => {
     const checkoutButton = document.getElementById('checkout-button');
@@ -124,11 +137,8 @@ const checkout = () => {
     renderCart();
 
     // Размещаем кнопку "Отправка" по центру
-     // Показываем кнопку, если она скрыта
+    // Показываем кнопку, если она скрыта
 };
-
-
-
 
 // Функция для отправки заказа в телеграм
 const sendOrderToTelegram = () => {
@@ -173,4 +183,3 @@ const updateCartCount = () => {
 document.addEventListener('DOMContentLoaded', () => {
     renderCart();
 });
-
