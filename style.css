@@ -34,16 +34,91 @@
 }
 
 /* Стили для корзины */
-.cart-item {
-    margin-bottom: 10px;
+.cart {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 0 auto; /* Центрируем корзину по горизонтали */
+    max-width: 600px; /* Устанавливаем максимальную ширину корзины */
+    background-color: #f4f4f4; /* Задаем серый фон корзины */
+    text-align: center; /* Центрируем содержимое корзины */
 }
 
-  .cart {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-bottom: 20px;
-        }
+.cart-item {
+    margin-bottom: 20px; /* Увеличиваем отступ между товарами */
+    padding: 20px; /* Добавляем внутренний отступ для каждого товара */
+    background-color: #e0e0e0; /* Задаем серый фон для товаров */
+    border-radius: 5px; /* Скругляем углы товаров */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавляем тень для товаров */
+}
 
-        .cart-item {
-            margin-bottom: 10px;
-        }
+/* Стили для кнопок управления количеством товара */
+.cart-item button {
+    background-color: #bbb; /* Серый цвет для кнопок */
+    color: #fff; /* Белый текст на кнопках */
+    border: none; /* Убираем границу кнопок */
+    padding: 10px 20px; /* Задаем отступы для кнопок */
+    margin-left: 10px; /* Отступ между кнопками */
+    cursor: pointer; /* Курсор в виде указателя */
+    border-radius: 3px; /* Скругляем углы кнопок */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавляем тень для кнопок */
+}
+
+.cart-item button:hover {
+    background-color: #999; /* Изменяем цвет кнопок при наведении */
+}
+
+/* Стили для общей стоимости и кнопки оформления заказа */
+.cart-total {
+    margin-top: 20px; /* Отступ от последнего товара до общей стоимости */
+    text-align: right; /* Выравниваем текст по правому краю */
+}
+
+.checkout-button {
+    background-color: #4CAF50; /* Зеленый цвет для кнопки оформления заказа */
+    color: white; /* Белый текст на кнопке */
+    border: none; /* Убираем границу кнопки */
+    padding: 15px 30px; /* Задаем отступы для кнопки */
+    margin-top: 20px; /* Отступ от общей стоимости до кнопки */
+    cursor: pointer; /* Курсор в виде указателя */
+    border-radius: 3px; /* Скругляем углы кнопки */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавляем тень для кнопки */
+}
+
+.checkout-button:hover {
+    background-color: #45a049; /* Изменяем цвет кнопки при наведении */
+}
+
+
+#cart-icon {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 999;
+    background-image: url('/img/cart.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+#cart-count {
+    position: absolute;
+    top: -10px; /* Располагаем счетчик относительно верхнего края иконки */
+    right: -18px; /* Располагаем счетчик относительно правого края иконки */
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 50%; /* Округляем углы, чтобы сделать круглым */
+    min-width: 20px; /* Минимальная ширина счетчика */
+    text-align: center; /* Выравниваем текст по центру */
+    z-index: 1000; /* Устанавливаем счетчик поверх иконки */
+}
+
+
+
