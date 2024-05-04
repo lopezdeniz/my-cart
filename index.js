@@ -2,73 +2,65 @@
 let cartItems = [];
 
 // Функция для добавления товара в корзину
-function addToCart(name, price) {
-    // Проверяем, есть ли уже такой товар в корзине
+const addToCart = (name, price) => {
     const existingItem = cartItems.find(item => item.name === name);
     if (existingItem) {
-        // Если товар уже есть в корзине, увеличиваем количество
         existingItem.quantity++;
     } else {
-        // Если товара еще нет в корзине, добавляем новый элемент
         cartItems.push({ name, price, quantity: 1 });
     }
     renderCart();
 }
 
 // Функция для удаления товара из корзины
-function removeFromCart(index) {
+const removeFromCart = (index) => {
     cartItems.splice(index, 1);
     renderCart();
 }
 
 // Функция для отображения корзины
-function renderCart() {
+const renderCart = () => {
     const cartElement = document.getElementById('cart-items');
-    const totalPriceElement = document.getElementById('total-price'); // Новый элемент для общей стоимости
+    const totalPriceElement = document.getElementById('total-price');
     cartElement.innerHTML = '';
     let totalPrice = 0;
+
     cartItems.forEach((item, index) => {
+        const { name, price, quantity } = item;
+        const itemTotal = price * quantity;
         const itemElement = document.createElement('div');
         itemElement.classList.add('cart-item');
         itemElement.innerHTML = `
-            <span>${item.name} - ${item.price} руб. x ${item.quantity}</span>
+            <span>${name} - ${price} руб. x ${quantity}</span>
             <button onclick="removeFromCart(${index})">Удалить</button>
         `;
         cartElement.appendChild(itemElement);
-        totalPrice += item.price * item.quantity;
+        totalPrice += itemTotal;
     });
-    // Отображаем общую стоимость
+
     totalPriceElement.textContent = `Общая стоимость: ${totalPrice} руб.`;
 }
 
 // Функция для оформления заказа
-function checkout() {
-    // Отправка заказа в телеграмм
+const checkout = () => {
     sendOrderToTelegram();
-    // Очистка корзины после оформления заказа
     cartItems = [];
     renderCart();
     alert('Заказ оформлен!');
 }
 
-// Функция для отправки заказа в телеграмм
-function sendOrderToTelegram() {
+// Функция для отправки заказа в телеграм
+const sendOrderToTelegram = () => {
     let message = "Новый заказ!\n\n";
-    let totalPrice = 0;
+    let totalPrice = calculateTotalPrice();
 
-    // Перебираем все товары в корзине
-    cartItems.forEach(item => {
-        const itemTotal = item.price * item.quantity;
-        totalPrice += itemTotal;
-        // Формируем строку с информацией о товаре
-        const itemMessage = `${item.name} - ${item.price} руб. x ${item.quantity} = ${itemTotal} руб.\n`;
-        message += itemMessage;
+    cartItems.forEach(({ name, price, quantity }) => {
+        const itemTotal = price * quantity;
+        message += `${name} - ${price} руб. x ${quantity} = ${itemTotal} руб.\n`;
     });
 
-    // Добавляем информацию о общей стоимости
     message += `\nОбщая стоимость: ${totalPrice} руб.`;
 
-    // Отправляем сообщение в телеграм
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://api.telegram.org/bot5790561769:AAFXHNyxsGSq2z7I0ds6HhSKaNisZ416m8U/sendMessage', true);
     xhr.setRequestHeader('Content-Type', 'application/json');
@@ -76,13 +68,14 @@ function sendOrderToTelegram() {
 }
 
 // Функция для вычисления общей стоимости заказа
-function calculateTotalPrice() {
-    let totalPrice = 0;
-    cartItems.forEach(item => {
-        totalPrice += item.price * item.quantity;
-    });
-    return totalPrice;
+const calculateTotalPrice = () => {
+    return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
 }
+
+// При загрузке страницы вызываем функцию для отображения товаров в корзине
+window.onload = () => {
+    renderCart();
+};
 
 
 
