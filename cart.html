@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+
+<!-- Кнопка для добавления товара в корзину -->
+<button onclick="addToCart('Товар 1', 10)">Добавить товар 1 в корзину</button>
+<button onclick="addToCart('Товар 2', 20)">Добавить товар 2 в корзину</button>
+<button onclick="addToCart('Товар 3', 90)">Добавить товар 3 в корзину</button>
+
+<!-- Корзина -->
+<div class="cart" id="cart">
+    <h2>Корзина</h2>
+    <div id="cart-items"></div>
+    <div id="total-price"></div>
+    <button onclick="checkout()">Оформить заказ</button>
+</div>
+
+
+
+<script src="index.js"></script>
+
+
+</body>
+</html>
