@@ -26,17 +26,15 @@ const renderCart = () => {
             <button onclick="removeFromCart(${index})">Удалить</button>
             <button onclick="decreaseQuantity(${index})">-</button>
             <button onclick="increaseQuantity(${index})">+</button>
-        `
+        `;
         itemElement.style.marginRight = '10px'; // Измените значение отступа по вашему усмотрению
-        cartElement.appendChild(itemElement);
-        totalPrice += itemTotal;;
         cartElement.appendChild(itemElement);
         totalPrice += itemTotal;
     });
 
     totalPriceElement.textContent = `Общая стоимость: ${totalPrice} руб.`;
 
-    updateCartCount(); // Вызываем функцию обновления счетчика товара
+    updateCartIconCount(); // Вызываем функцию обновления счетчика товара
 };
 
 // При загрузке страницы проверяем наличие сохраненных данных в локальном хранилище
@@ -96,13 +94,16 @@ const increaseQuantity = (index) => {
     updateCartIconCount();
 };
 
+
+
 // Функция для оформления заказа
 const checkout = () => {
     const checkoutButton = document.getElementById('checkout-button');
     checkoutButton.textContent = 'ОТПРАВКА';
     checkoutButton.style.backgroundColor = 'red'; // Меняем цвет кнопки на красный
     checkoutButton.style.width = '150px'; // Устанавливаем фиксированную ширину кнопки, чтобы цвет не выходил за рамки
-
+    checkoutButton.style.margin = '0 auto';
+    checkoutButton.style.display = 'block';
     // Отправляем заказ в телеграм
     sendOrderToTelegram();
 
@@ -121,7 +122,13 @@ const checkout = () => {
     cartItems = [];
     localStorage.removeItem('cartItems');
     renderCart();
+
+    // Размещаем кнопку "Отправка" по центру
+     // Показываем кнопку, если она скрыта
 };
+
+
+
 
 // Функция для отправки заказа в телеграм
 const sendOrderToTelegram = () => {
@@ -167,9 +174,3 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCart();
 });
 
-
-
-
-
-
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-1002094926558!!!bot5790561769:AAFXHNyxsGSq2z7I0ds6HhSKaNisZ416m8U

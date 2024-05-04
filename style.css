@@ -120,5 +120,124 @@
     z-index: 1000; /* Устанавливаем счетчик поверх иконки */
 }
 
+.product {
+    max-width: 300px; /* Максимальная ширина карточки товара */
+    margin: 0 auto 20px; /* Центрируем карточку товара и добавляем отступ между ними */
+    padding: 20px; /* Внутренний отступ для карточки товара */
+    background-color: #fff; /* Белый фон карточки товара */
+    border-radius: 10px; /* Скругляем углы карточки товара */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для карточки товара */
+    text-align: center; /* Центрируем текст внутри карточки товара */
+}
+
+.product img {
+    max-width: 100%; /* Чтобы изображение внутри карточки товара не выходило за пределы */
+    border-radius: 5px; /* Скругляем углы изображения */
+    margin-bottom: 10px; /* Добавляем отступ снизу от изображения */
+}
+
+.product h3 {
+    margin-bottom: 10px; /* Отступ снизу от заголовка */
+}
+
+.product p {
+    margin-bottom: 15px; /* Отступ снизу от текста */
+}
+
+.product button {
+    background-color: #4CAF50; /* Зеленый цвет для кнопок */
+    color: white; /* Белый текст на кнопке */
+    border: none; /* Убираем границу кнопки */
+    padding: 10px 20px; /* Задаем отступы для кнопки */
+    cursor: pointer; /* Курсор в виде указателя */
+    border-radius: 3px; /* Скругляем углы кнопки */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавляем тень для кнопки */
+}
+
+.product button:hover {
+    background-color: #45a049; /* Изменяем цвет кнопки при наведении */
+}
+
+
+.products-container {
+    display: flex;
+}
+
+
+
+
+.products-container {
+    display: flex;
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+}
+
+.product {
+    flex: 0 0 calc(33.33% - 20px); /* Задаем ширину каждой карточки, с учетом отступов */
+    margin: 10px; /* Отступ между карточками */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+
+.button-checkout {
+    background-color: #7f8c8d;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.button-checkout:hover {
+    background-color: #7f8c8f;
+}
+
+input[type="text"],
+input[type="tel"] {
+    color: #333; /* Цвет текста */
+    background-color: #f5f5f5; /* Цвет фона */
+    border: 1px solid #ccc; /* Рамка */
+    border-radius: 5px; /* Скругление углов */
+    padding: 9.2px 13.8px; /* Внутренние отступы, увеличенные на 15% */
+    margin-bottom: 11.5px; /* Внешние отступы, увеличенные на 15% */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Тень */
+    transition: border-color 0.3s ease-in-out; /* Анимация изменения цвета рамки */
+    font-size: 16.1px; /* Размер шрифта, увеличенный на 15% */
+    text-align: left; /* Выравнивание текста по левому краю */
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus {
+    border-color: #007bff; /* Цвет рамки при фокусировке */
+}
+
+
+.cart-item {
+    margin-bottom: 20px; /* Увеличиваем отступ между товарами */
+    padding: 20px; /* Добавляем внутренний отступ для каждого товара */
+    background-color: #e0e0e0; /* Задаем серый фон для товаров */
+    border-radius: 5px; /* Скругляем углы товаров */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавляем тень для товаров */
+    display: flex; /* Делаем контейнер товара блочно-строчным */
+    align-items: center; /* Выравниваем элементы по центру вертикали */
+}
+
+.cart-item .product-image {
+    max-width: 50px; /* Устанавливаем максимальную ширину изображения */
+    max-height: 50px; /* Устанавливаем максимальную высоту изображения */
+    margin-right: 10px; /* Отступ справа от изображения */
+}
+
+
+
 
 
