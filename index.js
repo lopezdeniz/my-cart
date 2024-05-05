@@ -9,7 +9,6 @@ const updateCartIconCount = () => {
     cartCountElement.style.display = cartItemCount > 0 ? 'inline-block' : 'none';
 };
 
-// Функция для отображения корзины
 const renderCart = () => {
     const cartElement = document.getElementById('cart-items');
     const totalPriceElement = document.getElementById('total-price');
@@ -34,8 +33,18 @@ const renderCart = () => {
 
     totalPriceElement.textContent = `Общая стоимость: ${totalPrice} руб.`;
 
+    // Проверяем, существует ли уже элемент с текстом "Стоимость доставки вам сообщит Диспетчер"
+    if (!document.querySelector('.deliveryMessage')) {
+        // Если не существует, добавляем его
+        totalPriceElement.insertAdjacentHTML('afterend', '<p class="deliveryMessage" style="font-size: 18px; font-weight: bold;">Стоимость доставки вам сообщит Диспетчер</p>');
+    }
+
+    totalPriceElement.style.fontSize = "20px"; // устанавливаем размер шрифта в 20 пикселей
+    totalPriceElement.style.fontWeight = "bold"; // делаем текст жирным
+
     updateCartIconCount(); // Вызываем функцию обновления счетчика товара
 };
+
 
 // При загрузке страницы проверяем наличие сохраненных данных в локальном хранилище
 window.onload = () => {
@@ -50,7 +59,7 @@ window.onload = () => {
 };
 
 
-//1
+//11111111
 
 
 
@@ -72,16 +81,6 @@ const addToCart = (name, price) => {
 
     renderCart(); // Переместил вызов функции renderCart() после обновления счетчика
 };
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -122,6 +121,8 @@ const checkout = () => {
     checkoutButton.style.width = '150px'; // Устанавливаем фиксированную ширину кнопки, чтобы цвет не выходил за рамки
     checkoutButton.style.margin = '0 auto';
     checkoutButton.style.display = 'block';
+    checkoutButton.style.fontSize = "20px"; // устанавливаем размер шрифта в 20 пикселей
+    checkoutButton.style.fontWeight = "bold"; // делаем текст жирным
     // Отправляем заказ в телеграм
     sendOrderToTelegram();
 
@@ -129,6 +130,7 @@ const checkout = () => {
         checkoutButton.textContent = 'Готово! Сейчас мы вам перезвоним для сверки заказа.';
         checkoutButton.style.backgroundColor = ''; // Возвращаем исходный цвет кнопки
         checkoutButton.style.width = ''; // Возвращаем ширину кнопки по умолчанию
+        
 
         // Очищаем поля ввода
         document.getElementById('name').value = '';

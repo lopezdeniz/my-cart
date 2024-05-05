@@ -102,6 +102,9 @@
     border-radius: 10px; /* Скругляем углы карточки товара */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для карточки товара */
     text-align: center; /* Выравниваем текст внутри карточки товара по центру */
+    font-size: 20px;
+    font-weight: bold;
+
 }
 
 .product img {
@@ -131,6 +134,16 @@
 .product button:hover {
     background-color: #45a049; /* Изменяем цвет фона кнопки при наведении на кнопку в карточке товара */
 }
+
+
+
+
+.btnadd {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
 
 .products-container {
     display: flex; /* Отображаем контейнер товаров как flex-контейнер */
@@ -177,7 +190,7 @@ input[type="tel"] {
     margin-bottom: 11.5px; /* Отступ снизу от полей ввода */
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Тень для полей ввода */
     transition: border-color 0.3s ease-in-out; /* Анимация изменения цвета границы поля ввода */
-    font-size: 16.1px; /* Размер шрифта в полях ввода */
+    font-size: 17px; /* Размер шрифта в полях ввода */
     text-align: left; /* Выравниваем текст в полях ввода по левому краю */
 }
 
@@ -195,17 +208,7 @@ font-style: bold;
 
 }
 
-   /* Стили для кнопки перехода на главную страницу */
-        .go-to-index {
-            width: 120px;
-            height: 60px;
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            cursor: pointer;
-            /* Добавляем указатель при наведении для обозначения ссылки */
-        }
+  
 
 
 
@@ -371,5 +374,7 @@ font-style: bold;
   font-size: 1.125rem;
 }
 /*# sourceMappingURL=style.css.map */
+
+
 
 
