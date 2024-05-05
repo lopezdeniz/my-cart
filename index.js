@@ -31,21 +31,28 @@ const renderCart = () => {
         const removeButton = document.createElement('button');
         removeButton.textContent = 'Удалить';
         removeButton.onclick = () => removeFromCart(index);
+        removeButton.style.backgroundColor = 'black'; // Устанавливаем цвет фона кнопки черным
+        removeButton.style.color = 'white'; // Устанавливаем цвет текста кнопки белым
         itemElement.appendChild(removeButton);
 
         const decreaseButton = document.createElement('button');
         decreaseButton.textContent = '-';
         decreaseButton.onclick = () => decreaseQuantity(index);
+        decreaseButton.style.backgroundColor = 'black'; // Устанавливаем цвет фона кнопки черным
+        decreaseButton.style.color = 'white'; // Устанавливаем цвет текста кнопки белым
         itemElement.appendChild(decreaseButton);
 
         const increaseButton = document.createElement('button');
         increaseButton.textContent = '+';
         increaseButton.onclick = () => increaseQuantity(index);
+        increaseButton.style.backgroundColor = 'black'; // Устанавливаем цвет фона кнопки черным
+        increaseButton.style.color = 'white'; // Устанавливаем цвет текста кнопки белым
         itemElement.appendChild(increaseButton);
 
         itemElement.style.marginRight = '10px';
         cartElement.appendChild(itemElement);
         totalPrice += itemTotal;
+
     });
 
     totalPriceElement.textContent = `Общая стоимость: ${totalPrice} руб.`;
