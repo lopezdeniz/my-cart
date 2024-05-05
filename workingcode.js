@@ -9,15 +9,6 @@ const updateCartIconCount = () => {
     cartCountElement.style.display = cartItemCount > 0 ? 'inline-block' : 'none';
 };
 
-
-
-
-
-
-
-
-
-
 // Функция для отображения корзины
 const renderCart = () => {
     const cartElement = document.getElementById('cart-items');
@@ -46,15 +37,6 @@ const renderCart = () => {
     updateCartIconCount(); // Вызываем функцию обновления счетчика товара
 };
 
-
-
-
-
-
-
-
-
-
 // При загрузке страницы проверяем наличие сохраненных данных в локальном хранилище
 window.onload = () => {
     // Получаем данные из локального хранилища
@@ -68,8 +50,7 @@ window.onload = () => {
 };
 
 
-
-
+//1
 
 
 
@@ -85,18 +66,20 @@ const addToCart = (name, price) => {
     }
     // Сохраняем данные в локальное хранилище
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    renderCart();
 
     // Вызываем функцию для обновления счетчика на иконке корзины
     updateCartIconCount();
 
-    // Запускаем анимацию
-    const product = document.querySelector(`.product[data-name="${name}"]`);
-    product.classList.add('added-to-cart');
-    setTimeout(() => {
-        product.classList.remove('added-to-cart');
-    }, 1500); // Устанавливаем таймер для удаления класса анимации через 1.5 секунды
+    renderCart(); // Переместил вызов функции renderCart() после обновления счетчика
 };
+
+
+
+
+
+
+
+
 
 
 
@@ -123,10 +106,6 @@ const decreaseQuantity = (index) => {
     }
 };
 
-
-
-
-
 // Функция для увеличения количества товара в корзине
 const increaseQuantity = (index) => {
     cartItems[index].quantity++;
@@ -134,9 +113,6 @@ const increaseQuantity = (index) => {
     renderCart();
     updateCartIconCount();
 };
-
-
-
 
 // Функция для оформления заказа
 const checkout = () => {

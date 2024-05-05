@@ -49,6 +49,13 @@ window.onload = () => {
     renderCart();
 };
 
+
+//1
+
+
+
+
+
 // Функция для добавления товара в корзину
 const addToCart = (name, price) => {
     const existingItem = cartItems.find(item => item.name === name);
@@ -65,6 +72,17 @@ const addToCart = (name, price) => {
 
     renderCart(); // Переместил вызов функции renderCart() после обновления счетчика
 };
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Функция для удаления товара из корзины
