@@ -6,32 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная</title>
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        /* Стили для модального окна */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            overflow: auto;
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 10% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 600px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-    </style>
 </head>
 
 <body>
@@ -39,9 +13,15 @@
     <br>
     <br>
     <!-- Иконка корзины -->
-    <div id="cart-icon" onclick="openCart()">
+    <div id="cart-icon" class="header__button get-modal_1">
         <span id="cart-count">0</span>
+         <div id="callback-button" class="header__button get-modal_1"></div>
     </div>
+
+
+       
+        
+
 
     <br>
     <br>
@@ -65,33 +45,61 @@
     <br>
     <br>
 
-    <!-- Модальное окно для корзины -->
-    <div id="cartModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeCart()">&times;</span>
-            <iframe id="cartFrame" src="" frameborder="0" style="width: 100%; height: 100%;"></iframe>
-        </div>
-    </div>
+
 
     <script src="index.js"></script>
 
-    <script>
-        // Функция для открытия модального окна с корзиной
-        function openCart() {
-            var modal = document.getElementById('cartModal');
-            modal.style.display = 'block';
-            var iframe = document.getElementById('cartFrame');
-            iframe.src = 'cart.html';
-        }
 
-        // Функция для закрытия модального окна с корзиной
-        function closeCart() {
-            var modal = document.getElementById('cartModal');
-            modal.style.display = 'none';
-            var iframe = document.getElementById('cartFrame');
-            iframe.src = '';
-        }
-    </script>
+
+<!-- Модальное окно -->
+<div class="modal" id="modal-1">
+    <div class="modal__content">
+        <button class="modal__close-button"><img src="/img/close.svg" width="12" alt=""></button>
+        <!-- Контент модального окна -->
+          
+            
+            <!-- Корзина -->
+            <div class="cart" id="cart">
+                <h2 class="mycart">Корзина</h2>
+                <div id="cart-items"></div>
+                <div id="total-price"></div>
+                <br>
+                <!-- Поля для ввода данных -->
+                <input type="text" id="name" placeholder="Ваше имя">
+                <input type="tel" id="phone" placeholder="Номер телефона">
+                <input type="text" id="address" placeholder="Адрес доставки">
+            
+                <br>
+                <br>
+            
+                <!-- Кнопка для оформления заказа -->
+                <div id="checkout-button" class="checkout-button">
+                    <button onclick="checkout()" class="button-checkout">Оформить заказ</button>
+                </div>
+                <div id="checkout-status" class="checkout-status" style="display: none;">
+                    <p id="sending-message">Отправка заказа...</p>
+                    <p id="ready-message" style="display: none;">Заказ успешно оформлен!</p>
+                </div>
+            </div>
+            
+            <script src="index.js"></script>
+            <script src="productQuantity.js"></script>
+            
+            <script>
+                // Функция для перехода на главную страницу
+                function goToIndex() {
+                    window.location.href = 'index.html';
+                }
+            </script>
+    </div>
+</div>
+
+
+
+
+
+
+
 </body>
 
 </html>
