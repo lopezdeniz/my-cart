@@ -20,13 +20,30 @@ const renderCart = () => {
         const itemTotal = price * quantity;
         const itemElement = document.createElement('div');
         itemElement.classList.add('cart-item');
-        itemElement.innerHTML = `
-            <span>${name} - ${price} руб. x ${quantity}</span>
-            <button onclick="removeFromCart(${index})">Удалить</button>
-            <button onclick="decreaseQuantity(${index})">-</button>
-            <button onclick="increaseQuantity(${index})">+</button>
-        `;
-        itemElement.style.marginRight = '10px'; // Измените значение отступа по вашему усмотрению
+
+        // Создаем элемент для названия товара
+        const itemNameElement = document.createElement('span');
+        itemNameElement.textContent = `${name} - ${price} руб. x ${quantity}`;
+        itemNameElement.classList.add('cart-item-name'); // Добавляем класс для стилизации
+        itemElement.appendChild(itemNameElement);
+
+        // Создаем кнопки для управления количеством товара
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'Удалить';
+        removeButton.onclick = () => removeFromCart(index);
+        itemElement.appendChild(removeButton);
+
+        const decreaseButton = document.createElement('button');
+        decreaseButton.textContent = '-';
+        decreaseButton.onclick = () => decreaseQuantity(index);
+        itemElement.appendChild(decreaseButton);
+
+        const increaseButton = document.createElement('button');
+        increaseButton.textContent = '+';
+        increaseButton.onclick = () => increaseQuantity(index);
+        itemElement.appendChild(increaseButton);
+
+        itemElement.style.marginRight = '10px';
         cartElement.appendChild(itemElement);
         totalPrice += itemTotal;
     });
@@ -36,14 +53,15 @@ const renderCart = () => {
     // Проверяем, существует ли уже элемент с текстом "Стоимость доставки вам сообщит Диспетчер"
     if (!document.querySelector('.deliveryMessage')) {
         // Если не существует, добавляем его
-        totalPriceElement.insertAdjacentHTML('afterend', '<p class="deliveryMessage" style="font-size: 18px; font-weight: bold;">Стоимость доставки вам сообщит Диспетчер</p>');
+        totalPriceElement.insertAdjacentHTML('afterend', '<p class="deliveryMessage">Стоимость доставки вам сообщит Диспетчер</p>');
     }
 
-    totalPriceElement.style.fontSize = "20px"; // устанавливаем размер шрифта в 20 пикселей
-    totalPriceElement.style.fontWeight = "bold"; // делаем текст жирным
-
+    totalPriceElement.classList.add('total-price-text'); // Добавляем класс для стилизации общей стоимости
     updateCartIconCount(); // Вызываем функцию обновления счетчика товара
 };
+
+
+
 
 
 // При загрузке страницы проверяем наличие сохраненных данных в локальном хранилище

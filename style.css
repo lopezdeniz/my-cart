@@ -135,15 +135,10 @@
     background-color: #45a049; /* Изменяем цвет фона кнопки при наведении на кнопку в карточке товара */
 }
 
-
-
-
 .btnadd {
     font-size: 20px;
     font-weight: bold;
 }
-
-
 
 .products-container {
     display: flex; /* Отображаем контейнер товаров как flex-контейнер */
@@ -207,6 +202,23 @@ font-weight: 900;
 font-style: bold;
 
 }
+
+/* Добавляем стили для элементов корзины */
+.cart-item-name {
+    font-size: 17px; /* Устанавливаем размер текста для названия товара */
+    font-weight: bold;
+}
+
+.total-price-text {
+    font-size: 17px; /* Устанавливаем размер текста для общей стоимости */
+    font-weight: bold; /* Делаем текст жирным */
+}
+
+.deliveryMessage {
+    font-size: 18px; /* Устанавливаем размер текста */
+    font-weight: bold; /* Делаем текст жирным */
+}
+
 
   
 
