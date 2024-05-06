@@ -135,9 +135,15 @@
     background-color: #140F0B; /* Изменяем цвет фона кнопки при наведении на кнопку в карточке товара */
 }
 
+.product button:active {
+    background-color: #808080;
+    color: black;
+}
+
 .btnadd {
     font-size: 20px;
     font-weight: bold;
+    margin-top: 10px;
 }
 
 .products-container {
