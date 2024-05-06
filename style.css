@@ -1,3 +1,10 @@
+body {
+    margin: 0; /* Убираем внешние отступы */
+    padding: 0; /* Убираем внутренние отступы */
+}
+
+
+
 /* Стили для шапки */
         .header {
             background-color: black;
@@ -51,6 +58,86 @@
     text-decoration: none; /* Убираем подчеркивание ссылки */
     cursor: pointer; /* Устанавливаем курсор в виде указателя */
 }
+
+
+
+
+
+
+ /* Стили для шапки */
+.header {
+    background-color: black;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    width: 100%; /* Устанавливаем ширину шапки на 100% */
+    box-sizing: border-box; /* Учитываем отступы и границы внутри шапки */
+}
+
+/* Стили для контейнера внутри шапки */
+.header__inner {
+    width: 100%; /* Устанавливаем ширину контейнера внутри шапки на 100% */
+    max-width: 1200px; /* Максимальная ширина контейнера внутри шапки */
+    padding: 0 15px;
+    margin: auto; /* Центрируем контейнер по горизонтали */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Размещаем элементы по краям */
+    text-align: center; /* Центрируем текст по центру */
+}
+
+/* Стили для навигационного меню */
+.menu {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем внутренние отступы */
+    margin: 0; /* Убираем внешние отступы */
+}
+
+.menu li {
+    display: inline-block; /* Делаем элементы списка блочными, чтобы они выстраивались в ряд */
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px; /* Увеличиваем размер шрифта */
+    font-weight: bold; /* Делаем текст жирным */
+    margin-right: 20px; /* Добавляем отступы между надписями */
+}
+
+/* Убираем правый отступ у последней надписи */
+.menu li:last-child a {
+    margin-right: 0;
+}
+
+/* Стили для кнопки "Заказать звонок" */
+.order-btn {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Стили для логотипа */
+.logo {
+    max-width: 300px; /* Максимальная ширина логотипа */
+    max-height: 100px; /* Максимальная высота логотипа */
+    width: auto; /* Автоматическое вычисление ширины */
+    height: auto; /* Автоматическое вычисление высоты */
+    color: white;
+    font-size: 30px;
+}
+
+
+
+
+
+
+
+
+
 
 /* Стили для корзины */
 .cart {
@@ -306,11 +393,6 @@ font-style: bold;
   overflow: hidden;
 }
 
-.header {
-  width: 100%;
-  background: #161621;
-  padding: 15px 0;
-}
 
 .header__inner {
   width: 100%;
@@ -475,6 +557,7 @@ font-style: bold;
 #back-to-shopping button:hover {
     background-color: darkgrey; /* Изменяем цвет фона кнопки при наведении */
 }
+
 
 
 
