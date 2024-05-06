@@ -308,6 +308,8 @@ body {
     .product {
         width: 100%; /* Каждая карточка будет занимать всю доступную ширину */
     }
+
+    
 }
 
 
@@ -421,7 +423,7 @@ font-style: bold;
 .header__button {
  
   position: fixed; /* Фиксируем иконку корзины */
-   margin: 70px auto 0;
+   margin: 80px auto 0;
     top: 30px; /* Отступ от верхнего края */
     right: 30px; /* Отступ от правого края */
     width: 50px; /* Ширина иконки корзины */
