@@ -1,4 +1,49 @@
+/* Стили для шапки */
+        .header {
+            background-color: black;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
+        /* Стили для навигационного меню */
+        .menu {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            margin-right: 20px;
+        }
+
+        .menu li:last-child {
+            margin-right: 0;
+        }
+
+        .menu li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Стили для кнопки "Заказать звонок" */
+        .order-btn {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        /* Медиа-запросы для адаптивности */
+        @media only screen and (max-width: 600px) {
+            .menu {
+                display: none;
+            }
+        }
 
 .close:hover,
 .close:focus {
@@ -11,7 +56,7 @@
 .cart {
     border: 1px solid #ccc;
     padding: 20px;
-    margin: 0 auto; /* Центрируем корзину по горизонтали */
+    margin: 70px auto 0; /* Центрируем корзину по горизонтали */
     max-width: 600px; /* Устанавливаем максимальную ширину корзины */
     background-color: #f4f4f4; /* Цвет фона корзины */
     text-align: center; /* Выравниваем текст по центру в корзине */
@@ -294,6 +339,7 @@ font-style: bold;
 .header__button {
  
   position: fixed; /* Фиксируем иконку корзины */
+   margin: 70px auto 0;
     top: 30px; /* Отступ от верхнего края */
     right: 30px; /* Отступ от правого края */
     width: 50px; /* Ширина иконки корзины */
