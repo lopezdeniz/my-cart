@@ -22,35 +22,37 @@
     <br>
     <br>
 
-    <div class="products-container">
-        <div class="product" data-id="1" data-name="Товар 1" data-price="100">
-            <h2>Товар 1</h2>
-            <img src="/img/pizza1.jpg" alt="Товар 1">
-            <p class="myprice">Цена: $10</p>
-            <!-- Добавляем элементы для выбора количества -->
-            <div>
-                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
-                <span class="quantity">1</span>
-                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
-            </div>
-            <!-- Кнопка для добавления в корзину -->
-            <button class="btnadd" onclick="addToCart('Товар 1', 10)">в корзину</button>
+
+<div class="products-container">
+
+    <div class="product" data-id="1" data-name="Товар 1" data-price="100">
+    <h2>Товар 1</h2>
+    <img src="/img/pizza1.jpg" alt="Товар 1">
+    <p class="myprice">Цена: $10</p>
+    <!-- Добавляем элементы для выбора количества -->
+        <div>
+            <button class="quantity-btn" onclick="decreaseQuantityCard(this)">-</button>
+            <span class="quantity" data-quantity="1">1</span>
+            <button class="quantity-btn" onclick="increaseQuantityCard(this)">+</button>
         </div>
-    
-        <div class="product" data-id="2" data-name="Товар 2" data-price="200">
-            <h2>Товар 2</h2>
-            <img src="/img/pizza2.jpeg" alt="Товар 2">
-            <p class="myprice">Цена: $20</p>
-            <!-- Добавляем элементы для выбора количества -->
-            <div>
-                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
-                <span class="quantity">1</span>
-                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
-            </div>
-            <!-- Кнопка для добавления в корзину -->
-            <button class="btnadd" onclick="addToCart('Товар 2', 20)">в корзину</button>
-        </div>
+        <button class="btnadd" onclick="addToCart('Товар 1', 100, this)">в корзину</button>
     </div>
+
+<div class="product" data-id="1" data-name="Товар 1" data-price="50">
+    <h2>Товар 2</h2>
+    <img src="/img/pizza2.jpeg" alt="Товар 2">
+    <p class="myprice">Цена: $50</p>
+    <!-- Добавляем элементы для выбора количества -->
+    <div>
+        <button class="quantity-btn" onclick="decreaseQuantityCard(this)">-</button>
+        <span class="quantity" data-quantity="1">1</span>
+        <button class="quantity-btn" onclick="increaseQuantityCard(this)">+</button>
+    </div>
+    <button class="btnadd" onclick="addToCart('Товар 2', 50, this)">в корзину</button>
+</div>
+</div>
+
+
 
 
     <br>
@@ -90,8 +92,8 @@
                 </div>
             </div>
             
-            <script src="index.js"></script>
-            <script src="productQuantity.js"></script>
+         
+          
             
          
     </div>

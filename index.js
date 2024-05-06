@@ -84,19 +84,20 @@ window.onload = () => {
 };
 
 
-//1111111111111
+//11111111111111111111
 
 
 
 
 
-// Функция для добавления товара в корзину
-const addToCart = (name, price) => {
+const addToCart = (name, price, button) => {
+    const card = button.closest('.product');
+    const quantity = parseInt(card.querySelector('.quantity').textContent);
     const existingItem = cartItems.find(item => item.name === name);
     if (existingItem) {
-        existingItem.quantity++;
+        existingItem.quantity += quantity;
     } else {
-        cartItems.push({ name, price, quantity: 1 });
+        cartItems.push({ name, price, quantity });
     }
     // Сохраняем данные в локальное хранилище
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
@@ -106,6 +107,8 @@ const addToCart = (name, price) => {
 
     renderCart(); // Переместил вызов функции renderCart() после обновления счетчика
 };
+
+
 
 
 
@@ -119,6 +122,12 @@ const removeFromCart = (index) => {
     // Вызываем функцию для обновления счетчика на иконке корзины
     updateCartIconCount();
 };
+
+
+
+
+
+
 
 // Функция для уменьшения количества товара в корзине
 const decreaseQuantity = (index) => {
@@ -137,6 +146,37 @@ const increaseQuantity = (index) => {
     renderCart();
     updateCartIconCount();
 };
+
+
+
+
+
+// Функция для уменьшения количества товара на карточке
+const decreaseQuantityCard = (button) => {
+    const card = button.closest('.product');
+    const quantityElement = card.querySelector('.quantity');
+    let quantity = parseInt(quantityElement.textContent);
+    if (quantity > 1) {
+        quantity--;
+        quantityElement.textContent = quantity;
+    }
+    // Назначаем черный цвет фона кнопке
+    button.style.backgroundColor = 'black';
+};
+
+// Функция для увеличения количества товара на карточке
+const increaseQuantityCard = (button) => {
+    const card = button.closest('.product');
+    const quantityElement = card.querySelector('.quantity');
+    let quantity = parseInt(quantityElement.textContent);
+    quantity++;
+    quantityElement.textContent = quantity;
+    // Назначаем черный цвет фона кнопке
+    button.style.backgroundColor = 'black';
+};
+
+
+
 
 
 
