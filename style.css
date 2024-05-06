@@ -167,7 +167,7 @@
 }
 
 /* Медиа-запрос для мобильных устройств (ширина меньше 768px) */
-@media (max-width: 767px) {
+@media (max-width: 800px) {
     .products-container {
         flex-direction: column; /* Карточки будут выстраиваться вертикально */
         align-items: center; /* Выравниваем карточки по центру по горизонтали */
