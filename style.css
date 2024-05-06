@@ -408,10 +408,14 @@ font-style: bold;
     border-radius: 5px; /* Делаем закругленные углы рамки */
 }
 
-/* кнопка Вернуться к покупкам  */
+/* Стили для ссылки */
 #back-to-shopping {
-    display: block;
-    margin: 20px auto; /* Центрируем кнопку по горизонтали и задаем отступы по вертикали */
+    display: inline-block; /* Делаем ссылку блочным элементом */
+    margin: 20px auto; /* Центрируем ссылку по горизонтали и задаем отступы по вертикали */
+}
+
+/* Стили для кнопки внутри ссылки */
+#back-to-shopping button {
     padding: 20px 30px; /* Задаем отступы внутри кнопки */
     background-color: grey; /* Задаем серый цвет фона */
     color: white; /* Задаем белый цвет текста */
@@ -421,8 +425,10 @@ font-style: bold;
     font-size: 16px; /* Задаем размер шрифта */
 }
 
-#back-to-shopping:hover {
+/* Изменение стилей кнопки при наведении */
+#back-to-shopping button:hover {
     background-color: darkgrey; /* Изменяем цвет фона кнопки при наведении */
 }
+
 
 

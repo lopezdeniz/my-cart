@@ -184,11 +184,19 @@ const increaseQuantityCard = (button) => {
 
 
 
-// Функция для оформления заказа
+
+
+
 // Функция для перехода на главную страницу
 const goToMainPage = () => {
-    window.location.href = 'index.html';
+    // Проверяем, находимся ли мы уже на главной странице
+    if (window.location.href !== 'index.html') {
+        // Если нет, перенаправляем пользователя на главную страницу
+        window.location.href = 'index.html';
+    }
 };
+
+
 
 const checkout = () => {
     const checkoutButton = document.getElementById('checkout-button');
@@ -223,6 +231,8 @@ const checkout = () => {
     const backButton = document.getElementById('back-to-shopping');
     backButton.style.display = 'block';
     backButton.addEventListener('click', goToMainPage);
+
+    
 };
 
 
