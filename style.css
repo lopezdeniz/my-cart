@@ -397,6 +397,28 @@ font-style: bold;
 }
 /*# sourceMappingURL=style.css.map */
 
+/* Оформление надписи общая стоимость */
+.total-price-text {
+    background-color: lightgray; /* Устанавливаем серый фон */
+    padding: 5px 10px; /* Добавляем небольшие отступы вокруг текста */
+    border-radius: 5px; /* Делаем закругленные углы рамки */
+}
 
+/* кнопка Вернуться к покупкам  */
+#back-to-shopping {
+    display: block;
+    margin: 20px auto; /* Центрируем кнопку по горизонтали и задаем отступы по вертикали */
+    padding: 20px 30px; /* Задаем отступы внутри кнопки */
+    background-color: grey; /* Задаем серый цвет фона */
+    color: white; /* Задаем белый цвет текста */
+    border: none; /* Убираем границу кнопки */
+    border-radius: 5px; /* Задаем скругленные углы */
+    cursor: pointer; /* Задаем указательный курсор при наведении */
+    font-size: 16px; /* Задаем размер шрифта */
+}
+
+#back-to-shopping:hover {
+    background-color: darkgrey; /* Изменяем цвет фона кнопки при наведении */
+}
 
 

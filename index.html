@@ -38,7 +38,7 @@
         <button class="btnadd" onclick="addToCart('Товар 1', 100, this)">в корзину</button>
     </div>
 
-<div class="product" data-id="1" data-name="Товар 1" data-price="50">
+<div class="product" data-id="1" data-name="Товар 2" data-price="50">
     <h2>Товар 2</h2>
     <img src="img/pizza2.jpeg" alt="Товар 2">
     <p class="myprice">Цена: $50</p>
@@ -50,6 +50,36 @@
     </div>
     <button class="btnadd" onclick="addToCart('Товар 2', 50, this)">в корзину</button>
 </div>
+
+
+<div class="product" data-id="1" data-name="Товар 3" data-price="30">
+    <h2>Товар 3</h2>
+    <img src="img/pizza3.jpeg" alt="Товар 3">
+    <p class="myprice">Цена: $30</p>
+    <!-- Добавляем элементы для выбора количества -->
+    <div>
+        <button class="quantity-btn" onclick="decreaseQuantityCard(this)">-</button>
+        <span class="quantity" data-quantity="1">1</span>
+        <button class="quantity-btn" onclick="increaseQuantityCard(this)">+</button>
+    </div>
+    <button class="btnadd" onclick="addToCart('Товар 3', 30, this)">в корзину</button>
+</div>
+
+<div class="product" data-id="1" data-name="Товар 4" data-price="40">
+    <h2>Товар 2</h2>
+    <img src="img/pizza1.jpg" alt="Товар 4">
+    <p class="myprice">Цена: $40</p>
+    <!-- Добавляем элементы для выбора количества -->
+    <div>
+        <button class="quantity-btn" onclick="decreaseQuantityCard(this)">-</button>
+        <span class="quantity" data-quantity="1">1</span>
+        <button class="quantity-btn" onclick="increaseQuantityCard(this)">+</button>
+    </div>
+    <button class="btnadd" onclick="addToCart('Товар 4', 40, this)">в корзину</button>
+</div>
+
+
+
 </div>
 
 
@@ -90,6 +120,7 @@
                     <p id="sending-message">Отправка заказа...</p>
                     <p id="ready-message" style="display: none;">Заказ успешно оформлен!</p>
                 </div>
+                <button id="back-to-shopping" style="display: none;">Вернуться к покупкам</button>
             </div>
             
          
@@ -98,6 +129,9 @@
          
     </div>
 </div>
+<!-- Кнопка "Вернуться к покупкам" -->
+
+
 
 
 

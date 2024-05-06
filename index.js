@@ -185,38 +185,53 @@ const increaseQuantityCard = (button) => {
 
 
 // Функция для оформления заказа
+// Функция для перехода на главную страницу
+const goToMainPage = () => {
+    window.location.href = 'index.html';
+};
+
 const checkout = () => {
     const checkoutButton = document.getElementById('checkout-button');
     checkoutButton.textContent = 'ОТПРАВКА';
-    checkoutButton.style.backgroundColor = 'red'; // Меняем цвет кнопки на красный
-    checkoutButton.style.width = '150px'; // Устанавливаем фиксированную ширину кнопки, чтобы цвет не выходил за рамки
+    checkoutButton.style.backgroundColor = 'red';
+    checkoutButton.style.width = '150px';
     checkoutButton.style.margin = '0 auto';
     checkoutButton.style.display = 'block';
-    checkoutButton.style.fontSize = "20px"; // устанавливаем размер шрифта в 20 пикселей
-    checkoutButton.style.fontWeight = "bold"; // делаем текст жирным
+    checkoutButton.style.fontSize = "20px";
+    checkoutButton.style.fontWeight = "bold";
+
     // Отправляем заказ в телеграм
     sendOrderToTelegram();
 
     setTimeout(() => {
         checkoutButton.textContent = 'Готово! Сейчас мы вам перезвоним для сверки заказа.';
-        checkoutButton.style.backgroundColor = ''; // Возвращаем исходный цвет кнопки
-        checkoutButton.style.width = ''; // Возвращаем ширину кнопки по умолчанию
-        
+        checkoutButton.style.backgroundColor = '';
+        checkoutButton.style.width = '';
 
         // Очищаем поля ввода
         document.getElementById('name').value = '';
         document.getElementById('phone').value = '';
         document.getElementById('address').value = '';
-    }, 1000); // 1 секунда
+    }, 1000);
 
     // Очищаем корзину и удаляем данные из локального хранилища
     cartItems = [];
     localStorage.removeItem('cartItems');
     renderCart();
 
-    // Размещаем кнопку "Отправка" по центру
-    // Показываем кнопку, если она скрыта
+    // Показываем кнопку "Вернуться к покупкам" и назначаем ей обработчик события для перехода на главную страницу
+    const backButton = document.getElementById('back-to-shopping');
+    backButton.style.display = 'block';
+    backButton.addEventListener('click', goToMainPage);
 };
+
+
+
+
+
+
+
+
 
 // Функция для отправки заказа в телеграм
 const sendOrderToTelegram = () => {
