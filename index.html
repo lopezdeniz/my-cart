@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная</title>
     <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
 </head>
 
 <body>
@@ -26,23 +27,38 @@
             <h2>Товар 1</h2>
             <img src="/img/pizza1.jpg" alt="Товар 1">
             <p class="myprice">Цена: $10</p>
+            <!-- Добавляем элементы для выбора количества -->
+            <div>
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            <!-- Кнопка для добавления в корзину -->
             <button class="btnadd" onclick="addToCart('Товар 1', 10)">в корзину</button>
         </div>
-
+    
         <div class="product" data-id="2" data-name="Товар 2" data-price="200">
             <h2>Товар 2</h2>
             <img src="/img/pizza2.jpeg" alt="Товар 2">
             <p class="myprice">Цена: $20</p>
+            <!-- Добавляем элементы для выбора количества -->
+            <div>
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                <span class="quantity">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+            </div>
+            <!-- Кнопка для добавления в корзину -->
             <button class="btnadd" onclick="addToCart('Товар 2', 20)">в корзину</button>
         </div>
     </div>
 
+
     <br>
     <br>
 
 
 
-    <script src="index.js"></script>
+   
 <!-- Модальное окно -->
 <div class="modal" id="modal-1">
     <div class="modal__content">
@@ -77,12 +93,7 @@
             <script src="index.js"></script>
             <script src="productQuantity.js"></script>
             
-            <script>
-                // Функция для перехода на главную страницу
-                function goToIndex() {
-                    window.location.href = 'index.html';
-                }
-            </script>
+         
     </div>
 </div>
 

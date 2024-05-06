@@ -84,7 +84,7 @@ window.onload = () => {
 };
 
 
-//11111111
+//1111111111111
 
 
 
@@ -137,6 +137,12 @@ const increaseQuantity = (index) => {
     renderCart();
     updateCartIconCount();
 };
+
+
+
+
+
+
 
 // Функция для оформления заказа
 const checkout = () => {
