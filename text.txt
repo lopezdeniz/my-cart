@@ -1,7 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway);
-* {
-  font-family: "Raleway";
-}
 body {
     margin: 0; /* Убираем внешние отступы */
     padding: 0; /* Убираем внутренние отступы */
@@ -9,6 +5,16 @@ body {
 }
 
 
+
+/* Стили для меню бургер */
+
+
+
+
+.list-group-flush, .dropdown-item  { 
+    font-size: 28px; /* Размер шрифта 20 пикселей */
+    font-weight: bold; /* Жирный шрифт */
+}
 
 
 /* Стили для шапки */
