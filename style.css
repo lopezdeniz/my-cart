@@ -1,8 +1,20 @@
 body {
     margin: 0; /* Убираем внешние отступы */
     padding: 0; /* Убираем внутренние отступы */
+    font-family: 'Poppins';font-size: ;
 }
 
+
+
+/* Стили для меню бургер */
+
+
+
+
+.list-group-flush, .dropdown-item  { 
+    font-size: 28px; /* Размер шрифта 20 пикселей */
+    font-weight: bold; /* Жирный шрифт */
+}
 
 
 /* Стили для шапки */
@@ -58,11 +70,6 @@ body {
     text-decoration: none; /* Убираем подчеркивание ссылки */
     cursor: pointer; /* Устанавливаем курсор в виде указателя */
 }
-
-
-
-
-
 
  /* Стили для шапки */
 .header {
@@ -423,7 +430,7 @@ font-style: bold;
 .header__button {
  
   position: fixed; /* Фиксируем иконку корзины */
-   margin: 80px auto 0;
+   margin: 70px auto 0;
     top: 30px; /* Отступ от верхнего края */
     right: 30px; /* Отступ от правого края */
     width: 50px; /* Ширина иконки корзины */
