@@ -17,7 +17,7 @@
     -moz-transition: left 0.3s;
     transition: left 0.3s;
     /* определяем цвет фона панели */
-    background: #808080;
+    background: ;
     /* поверх других элементов */
     z-index: 2000;
 }
@@ -29,7 +29,7 @@
     /* абсолютно позиционируем */
     position: absolute;
     /* относительно левого края панели */
-    left: 320px;
+    left: 337px;
     /* отступ от верхнего края панели */
     top: 1em;
     /* внутренние отступы */
@@ -39,7 +39,7 @@
     */
     background: inherit;
     /* цвет текста */
-    color: #dadada;
+    color: black;
     /* вид курсора */
     cursor: pointer;
     /* размер шрифта */
@@ -58,10 +58,7 @@
  * символ Unicode (TRIGRAM FOR HEAVEN)
 */
 
-.nav-toggle:after {
-    content: '\2630';
-    text-decoration: none;
-}
+
 
 
 /* цвет текста при наведении */
@@ -226,7 +223,7 @@ body {
 
 .nav > ul {
     display: block;
-    margin: 0;
+    margin: 17px;
     padding: 0;
     list-style: none;
 }
@@ -422,4 +419,38 @@ a {
     border: 2px solid #00C851;
     color: #007E33!important;
     background-color: transparent;
+}
+
+
+
+.nav {
+  background-image: url(''); /* ваш путь к иконке */
+  background-size: cover; /* чтобы иконка заполняла всю область */
+  background-repeat: no-repeat; /* чтобы иконка не повторялась */
+}
+
+.nav-toggle {
+  display: block;
+   height: 28px;
+    width: 22px;
+  cursor: pointer; /* изменение курсора при наведении */
+}
+
+.nav-toggle:after {
+  content: ''; /* добавляем контент для псевдоэлемента */
+  position: absolute; /* абсолютное позиционирование */
+  top: 0;
+  left: 0;
+  width: 114%;
+  height: 100%;
+  background-image: url('img/iconburger.svg'); /* ваш путь к фоновой картинке */
+  background-size: cover; /* чтобы фон заполнял всю область */
+  background-repeat: no-repeat; /* чтобы фон не повторялся */
+  z-index: -1; /* помещаем псевдоэлемент под контент */
+}
+
+
+.nav-toggle:after {
+    content: '';
+    text-decoration: none;
 }
