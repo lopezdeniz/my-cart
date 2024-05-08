@@ -20,6 +20,7 @@
     background: ;
     /* поверх других элементов */
     z-index: 2000;
+    background-color:rgb(255 255 255 / 10%);
 }
 
 
@@ -64,7 +65,7 @@
 /* цвет текста при наведении */
 
 .nav-toggle:hover {
-    color: #f4f4f4;
+    color: black;
 }
 
 
@@ -264,6 +265,7 @@ body {
     width: 100%; /* Ширина ссылки */
     text-decoration: none; /* Убираем подчеркивание */
     transition: color .5s ease, padding .5s ease; /* Плавные переходы */
+    background-color:#f4f4f4;
 }
 
 /* Стили для ссылок при наведении */
