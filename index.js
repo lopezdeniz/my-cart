@@ -49,7 +49,6 @@ const renderCart = () => {
         increaseButton.style.color = 'white'; // Устанавливаем цвет текста кнопки белым
         itemElement.appendChild(increaseButton);
 
-        itemElement.style.marginRight = '10px';
         cartElement.appendChild(itemElement);
         totalPrice += itemTotal;
 
