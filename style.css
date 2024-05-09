@@ -368,7 +368,7 @@ font-style: bold;
 
 /* Добавляем стили для элементов корзины */
 .cart-item-name {
-    font-size: 12px; /* Устанавливаем размер текста для названия товара */
+    font-size: 17px; /* Устанавливаем размер текста для названия товара */
     font-weight: bold;
 }
 
@@ -488,7 +488,7 @@ font-style: bold;
 .modal__content {
   width: 100%;
   max-width: 500px;
-  padding: 50px;
+  padding: 14px;
   background: #f9f9f9;
   -webkit-box-shadow: 0 5px 15px black;
           box-shadow: 0 5px 15px black;

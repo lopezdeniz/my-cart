@@ -34,6 +34,7 @@ const renderCart = () => {
         removeButton.style.backgroundColor = 'black'; // Устанавливаем цвет фона кнопки черным
         removeButton.style.color = 'white'; // Устанавливаем цвет текста кнопки белым
         itemElement.appendChild(removeButton);
+        removeButton.style.padding = '7px'; // Устанавливаем внутренний отступ в 7px
 
         const decreaseButton = document.createElement('button');
         decreaseButton.textContent = '-';
@@ -41,6 +42,7 @@ const renderCart = () => {
         decreaseButton.style.backgroundColor = 'black'; // Устанавливаем цвет фона кнопки черным
         decreaseButton.style.color = 'white'; // Устанавливаем цвет текста кнопки белым
         itemElement.appendChild(decreaseButton);
+        decreaseButton.style.padding = '3px 7px'; // Устанавливаем внутренний отступ
 
         const increaseButton = document.createElement('button');
         increaseButton.textContent = '+';
@@ -48,6 +50,7 @@ const renderCart = () => {
         increaseButton.style.backgroundColor = 'black'; // Устанавливаем цвет фона кнопки черным
         increaseButton.style.color = 'white'; // Устанавливаем цвет текста кнопки белым
         itemElement.appendChild(increaseButton);
+        increaseButton.style.padding = '3px 7px'; // Устанавливаем внутренний отступ
 
         cartElement.appendChild(itemElement);
         totalPrice += itemTotal;
