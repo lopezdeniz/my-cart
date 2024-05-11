@@ -2,24 +2,41 @@ let cartItems = [];
 
 // Функция для обновления количества товаров в корзине и отображения на иконке
 const updateCartIconCount = () => {
+    // Получаем элемент иконки корзины
     const cartIcon = document.getElementById('cart-icon');
+    // Находим элемент, отображающий количество товаров в корзине внутри иконки
     const cartCountElement = cartIcon.querySelector('#cart-count');
+    // Вычисляем общее количество товаров в корзине путем суммирования количества каждого товара в массиве cartItems
     const cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+    // Устанавливаем текстовое содержимое элемента cartCountElement равным общему количеству товаров в корзине
     cartCountElement.textContent = cartItemCount;
+    // Устанавливаем стиль отображения элемента cartCountElement в зависимости от того, есть ли товары в корзине
     cartCountElement.style.display = cartItemCount > 0 ? 'inline-block' : 'none';
 };
 
+
+// Функция для отображения содержимого корзины
 const renderCart = () => {
+    // Получаем элемент, в который будем отображать товары в корзине
     const cartElement = document.getElementById('cart-items');
+    // Получаем элемент, в который будем отображать общую стоимость товаров
     const totalPriceElement = document.getElementById('total-price');
+    // Очищаем содержимое элемента cartElement перед началом отображения новых товаров
     cartElement.innerHTML = '';
+    // Инициализируем переменную для хранения общей стоимости товаров в корзине
     let totalPrice = 0;
 
+    // Проходимся по каждому товару в корзине
     cartItems.forEach((item, index) => {
+        // Деструктурируем объект товара, чтобы получить его свойства
         const { name, price, quantity } = item;
+        // Вычисляем общую стоимость данного товара (цена * количество)
         const itemTotal = price * quantity;
+        // Создаем новый элемент для отображения товара в корзине
         const itemElement = document.createElement('div');
+        // Добавляем класс 'cart-item' к элементу товара
         itemElement.classList.add('cart-item');
+
 
         // Создаем элемент для названия товара
         const itemNameElement = document.createElement('span');
@@ -92,23 +109,31 @@ window.onload = () => {
 
 
 
+// Функция для добавления товара в корзину
 const addToCart = (name, price, button) => {
+    // Находим родительский элемент товара, к которому привязана кнопка добавления в корзину
     const card = button.closest('.product');
+    // Получаем количество товара, указанное на карточке товара
     const quantity = parseInt(card.querySelector('.quantity').textContent);
+    // Поиск товара в корзине по его имени
     const existingItem = cartItems.find(item => item.name === name);
+    // Если товар уже существует в корзине, увеличиваем его количество
     if (existingItem) {
         existingItem.quantity += quantity;
     } else {
+        // Если товара нет в корзине, добавляем его в массив cartItems
         cartItems.push({ name, price, quantity });
     }
-    // Сохраняем данные в локальное хранилище
+    // Сохраняем обновленный массив товаров в локальное хранилище
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
-    // Вызываем функцию для обновления счетчика на иконке корзины
+    // Обновляем счетчик на иконке корзины
     updateCartIconCount();
 
-    renderCart(); // Переместил вызов функции renderCart() после обновления счетчика
+    // Вызываем функцию для отображения содержимого корзины после обновления
+    renderCart();
 };
+
 
 
 
@@ -210,6 +235,14 @@ const checkout = () => {
     checkoutButton.style.fontSize = "20px";
     checkoutButton.style.fontWeight = "bold";
 
+
+
+
+
+
+
+
+
     // Отправляем заказ в телеграм
     sendOrderToTelegram();
 
@@ -237,14 +270,6 @@ const checkout = () => {
     
 };
 
-
-
-
-
-
-
-
-
 // Функция для отправки заказа в телеграм
 const sendOrderToTelegram = () => {
     // Получаем значения полей имени, телефона и адреса
@@ -269,6 +294,15 @@ const sendOrderToTelegram = () => {
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify({ chat_id: '-1002094926558', text: message }));
 };
+
+
+
+
+
+
+
+
+//11111111111111
 
 // Функция для вычисления общей стоимости заказа
 const calculateTotalPrice = () => {
